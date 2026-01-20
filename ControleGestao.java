@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class ControleGestao {
 
     // Variáveis principais do sistema
-    static int id = 0;            // inteiro
-    static String nome = "";      // string
-    static boolean ativo = false; // boolean
+    static int id = 0;
+    static String nome = "";
+    static boolean ativo = false;
 
     public static void main(String[] args) {
 
@@ -98,4 +98,3 @@ public class ControleGestao {
         }
     }
 }
-
