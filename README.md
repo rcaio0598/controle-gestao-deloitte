@@ -1,5 +1,8 @@
 # Controle de Gestão (CRUD) - Bootcamp
 
+![Java](https://img.shields.io/badge/Language-Java-blue)
+![Version](https://img.shields.io/badge/Version-1.0-green)
+
 ## 📌 Sobre o projeto
 Projeto desenvolvido durante o Bootcamp para praticar lógica de programação em Java.  
 O sistema é um CRUD simples (Create, Read, Update, Delete) executado via console, que permite gerenciar registros básicos.
