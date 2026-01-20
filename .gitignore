@@ -1,0 +1,17 @@
+# IntelliJ IDEA
+*.iml
+*.iws
+.idea/
+
+# Build
+target/
+
+# Arquivos compilados
+*.class
+
+# Logs
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
