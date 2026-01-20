@@ -1,22 +1,52 @@
-# Controle de Gestão
+# Controle de Gestão (CRUD) - Bootcamp
 
-Projeto do Bootcamp para criar um sistema de cadastro simples em Java.
-Objetivo: praticar uso de variáveis, estruturas condicionais e loops.
+## 📌 Sobre o projeto
+Projeto desenvolvido durante o Bootcamp para praticar lógica de programação em Java.  
+O sistema é um CRUD simples (Create, Read, Update, Delete) executado via console, que permite gerenciar registros básicos.
 
-## O que é o CRUD neste projeto?
+---
 
-Este projeto é um sistema de cadastro simples em Java que utiliza as operações do CRUD:
+## 🎯 Objetivo
+O objetivo é consolidar o uso de:
 
-- **Create (Criar)**: cadastrar novos registros de usuários.
-- **Read (Ler)**: consultar registros cadastrados.
-- **Update (Atualizar)**: editar informações de um registro existente.
-- **Delete (Deletar)**: remover um registro do sistema.
+- Variáveis dos tipos `int`, `String` e `boolean`
+- Estruturas condicionais (`if`, `else`)
+- Estruturas de repetição (`for`, `while`)
+- Operações básicas de CRUD
 
-### Como o CRUD funciona aqui?
+---
 
-O sistema utiliza:
-- `id` (inteiro) para identificar cada registro.
-- `nome` (String) para armazenar o nome do usuário.
-- `ativo` (boolean) para indicar se o registro está ativo ou não.
+## ⚙️ Funcionalidades
+- **Cadastrar** um novo registro
+- **Consultar** registros existentes
+- **Atualizar** registros
+- **Deletar** registros
 
-O programa usa **estruturas de decisão (if/else)** e **loops (for/while)** para controlar o fluxo e manter o menu de opções funcionando.
+---
+
+## 🧱 Estrutura do registro
+Cada registro contém:
+
+| Campo | Tipo | Descrição |
+|------|------|-----------|
+| `id` | `int` | Identificador do registro |
+| `nome` | `String` | Nome do registro |
+| `ativo` | `boolean` | Indica se o registro está ativo |
+
+---
+
+## 🚀 Como executar
+1. Abra o projeto no IntelliJ IDEA
+2. Execute a classe `ControleGestao`
+3. Siga o menu no console
+
+---
+
+## 📌 Observações
+- Projeto inicial voltado para prática de lógica.
+- Pode ser melhorado com persistência de dados e validações.
+
+---
+
+## 🧾 Versão
+- **1.0** — Versão inicial com CRUD básico via console
