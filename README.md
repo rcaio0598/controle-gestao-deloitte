@@ -2,6 +2,8 @@
 
 ![Java](https://img.shields.io/badge/Language-Java-blue)
 ![Version](https://img.shields.io/badge/Version-1.0-green)
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow)
+
 
 ## 📌 Sobre o projeto
 Projeto desenvolvido durante o Bootcamp para praticar lógica de programação em Java.  
