@@ -17,10 +17,10 @@ O objetivo é consolidar o uso de:
 ---
 
 ## ⚙️ Funcionalidades
-- **Cadastrar** um novo registro
-- **Consultar** registros existentes
-- **Atualizar** registros
-- **Deletar** registros
+- Cadastrar um novo registro
+- Consultar registros existentes
+- Atualizar registros
+- Deletar registros
 
 ---
 
