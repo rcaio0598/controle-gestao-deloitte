@@ -1,0 +1,2 @@
+# Configuração inicial do projeto
+tema=dark
