@@ -1,35 +1,124 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class ControleGestao {
 
-    // Variáveis principais do sistema
-    static int id = 0;
-    static String nome = "";
-    static boolean ativo = false;
-
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        List<Usuario> usuarios = new ArrayList<>(); // LISTA DE USUÁRIOS
         int opcao;
 
-        // Menu usando FOR (conforme exigido)
-        for (int i = 0; i < 10; i++) {
+        while (true) {
 
             exibirMenu();
             opcao = scanner.nextInt();
-            scanner.nextLine(); // limpa o buffer
+            scanner.nextLine();
 
             if (opcao == 1) {
-                cadastrarUsuario(scanner);
+                // CADASTRAR
+                System.out.print("Digite o ID: ");
+                int id = scanner.nextInt();
+                scanner.nextLine();
+
+                System.out.print("Digite o nome: ");
+                String nome = scanner.nextLine();
+
+                // VALIDAÇÃO: ID repetido
+                boolean existe = false;
+                for (Usuario u : usuarios) {
+                    if (u.getId() == id && u.isAtivo()) {
+                        existe = true;
+                        break;
+                    }
+                }
+
+                if (existe) {
+                    System.out.println("Erro: já existe um usuário com esse ID.");
+                } else if (nome.isBlank()) {
+                    System.out.println("Erro: nome não pode ser vazio.");
+                } else {
+                    usuarios.add(new Usuario(id, nome));
+                    System.out.println("Usuário cadastrado com sucesso!");
+                }
+
             } else if (opcao == 2) {
-                consultarUsuario();
+                // CONSULTAR
+                System.out.print("Digite o ID para consultar: ");
+                int idConsulta = scanner.nextInt();
+                scanner.nextLine();
+
+                boolean encontrado = false;
+
+                for (Usuario u : usuarios) {
+                    if (u.getId() == idConsulta && u.isAtivo()) {
+                        System.out.println("ID: " + u.getId());
+                        System.out.println("Nome: " + u.getNome());
+                        System.out.println("Status: ATIVO");
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if (!encontrado) {
+                    System.out.println("Usuário não encontrado.");
+                }
+
             } else if (opcao == 3) {
-                atualizarUsuario(scanner);
+                // ATUALIZAR
+                System.out.print("Digite o ID para atualizar: ");
+                int idAtualizar = scanner.nextInt();
+                scanner.nextLine();
+
+                boolean encontrado = false;
+
+                for (Usuario u : usuarios) {
+                    if (u.getId() == idAtualizar && u.isAtivo()) {
+                        System.out.print("Digite o novo nome: ");
+                        String novoNome = scanner.nextLine();
+
+                        if (novoNome.isBlank()) {
+                            System.out.println("Erro: nome não pode ser vazio.");
+                        } else {
+                            u.setNome(novoNome);
+                            System.out.println("Usuário atualizado com sucesso!");
+                        }
+
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if (!encontrado) {
+                    System.out.println("Usuário não encontrado.");
+                }
+
             } else if (opcao == 4) {
-                deletarUsuario();
+                // DELETAR
+                System.out.print("Digite o ID para deletar: ");
+                int idDeletar = scanner.nextInt();
+                scanner.nextLine();
+
+                boolean encontrado = false;
+
+                for (Usuario u : usuarios) {
+                    if (u.getId() == idDeletar && u.isAtivo()) {
+                        u.desativar();
+                        System.out.println("Usuário deletado com sucesso.");
+                        encontrado = true;
+                        break;
+                    }
+                }
+
+                if (!encontrado) {
+                    System.out.println("Usuário não encontrado.");
+                }
+
             } else if (opcao == 0) {
                 System.out.println("Saindo do sistema...");
                 break;
+
             } else {
                 System.out.println("Opção inválida. Tente novamente.");
             }
@@ -49,52 +138,5 @@ public class ControleGestao {
         System.out.println("4 - Deletar usuário");
         System.out.println("0 - Sair");
         System.out.print("Escolha uma opção: ");
-    }
-
-    private static void cadastrarUsuario(Scanner scanner) {
-        if (!ativo) {
-            System.out.print("Digite o ID: ");
-            id = scanner.nextInt();
-            scanner.nextLine();
-
-            System.out.print("Digite o nome: ");
-            nome = scanner.nextLine();
-
-            ativo = true;
-            System.out.println("Usuário cadastrado com sucesso!");
-        } else {
-            System.out.println("Já existe um usuário cadastrado.");
-        }
-    }
-
-    private static void consultarUsuario() {
-        if (ativo) {
-            System.out.println("ID: " + id);
-            System.out.println("Nome: " + nome);
-            System.out.println("Status: ATIVO");
-        } else {
-            System.out.println("Nenhum usuário cadastrado no sistema.");
-        }
-    }
-
-    private static void atualizarUsuario(Scanner scanner) {
-        if (ativo) {
-            System.out.print("Digite o novo nome: ");
-            nome = scanner.nextLine();
-            System.out.println("Usuário atualizado com sucesso!");
-        } else {
-            System.out.println("Não existe usuário para atualizar.");
-        }
-    }
-
-    private static void deletarUsuario() {
-        if (ativo) {
-            ativo = false;
-            id = 0;
-            nome = "";
-            System.out.println("Usuário deletado com sucesso.");
-        } else {
-            System.out.println("Não existe usuário para deletar.");
-        }
     }
 }
