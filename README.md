@@ -55,3 +55,18 @@ Cada registro contém:
 
 ## 🧾 Versão
 - **1.0** — Versão inicial com CRUD básico via console
+
+## Uso do git reset
+
+Durante o desenvolvimento, foi criado um arquivo `senha.txt` com conteúdo fictício e realizado um commit propositalmente. Após isso, foi necessário remover esse arquivo do último commit sem perder as demais alterações.
+
+### Diferença entre os tipos de reset
+
+- **git reset --soft**: desfaz o commit, mas mantém todas as alterações no stage.
+- **git reset --mixed**: desfaz o commit e remove os arquivos do stage, mantendo apenas no working directory.
+- **git reset --hard**: desfaz o commit e apaga completamente as alterações, podendo causar perda de código.
+
+### Justificativa da escolha
+
+O comando `git reset --soft` foi escolhido porque permite desfazer o último commit sem perder as alterações realizadas, possibilitando remover apenas o arquivo sensível antes de criar um novo commit limpo. Os outros tipos de reset não eram adequados, pois o `--mixed` exigiria novo staging desnecessário e o `--hard` poderia causar perda de código.
+
